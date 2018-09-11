@@ -1,0 +1,49 @@
+body {
+    --main-color: white;
+    --accent-color-1: #F63E02;
+    --accent-color-2: #06A77D;
+    --accent-color-3: #525174;
+    --accent-color-4: #f2f2f2;
+    --accent-color-5: #F5BB00;
+    --accent-color-6: #2176AE;
+    --accent-color-7: #EF476F;
+    --ambiant-color-1: #1D2671;
+    --ambiant-color-2: #C33764;
+    --default-font-size: 20px;
+    --default-text-color: #121212;
+    --light-shadow-color: rgba(10, 10, 10, 0.1);
+    --alt-shadow-color: rgba(242, 242, 242, 0.7);
+    color: var(--default-text-color);
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1;
+    overflow-x: hidden;
+}
+
+.section .container > .title,
+.section .column > .title {
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.section .container > .title:before,
+.section .column > .title:before {
+  -webkit-animation: tbs 2s linear infinite;
+          animation: tbs 2s linear infinite;
+  background: url("http://localhost/www/assets/icons/svg/equitriangle.svg") 50% -45%/contain no-repeat;
+  content: '';
+  height: 2rem;
+  left: 0;
+  position: absolute;
+  top: calc(50% - 1rem);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  width: 2rem;
+}
+
+@keyframes tbs {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  

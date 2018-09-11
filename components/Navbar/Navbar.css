@@ -1,0 +1,12 @@
+@media screen and (max-width: 1087px) {
+    .navbar .container {
+        display: flex;
+    }
+    .navbar-menu.is-active {
+        display: flex;
+    }
+}
+.navbar-brand {
+    justify-content: center;
+    flex-grow: 1;
+}

@@ -1,0 +1,7 @@
+.wysiwyg-editor {
+
+    overflow-y: scroll;
+    overflow-x: none;
+    resize: vertical;
+
+}

@@ -1,0 +1,39 @@
+#createPost {
+
+    overflow: hidden;
+    position: relative;
+
+}
+#createPost > * {
+
+    transition: transform .3s ease-in-out;
+
+}
+#createPost .post--editor--form {
+
+    transform: translate(0, 0);
+
+}
+
+#createPost.previewing .post--editor--form {
+
+    transform: translate(-100%, 0);
+
+}
+
+#createPost.previewing .wysiwyg-wrapper {
+
+    transform: translate(0%, 0);
+
+}
+
+#createPost .wysiwyg-wrapper {
+    
+    position: absolute;
+    left: 0; right: 0; top: 0;
+
+    word-break: break-all;
+
+    transform: translate(100%, 0);
+
+}

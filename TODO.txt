@@ -1,0 +1,13 @@
+Partie Blog Visiteur
+    - page post url mask à revoir
+    - layout blog
+
+Partie Blog Dashboard:
+    - postEditor sanitize wysiwiyg
+    - postList: 
+        * action remove edit
+        * tooltip de cellule
+    - Liens vers components tools
+
+Integrer la partie portfolio 
+Integrer les projets
