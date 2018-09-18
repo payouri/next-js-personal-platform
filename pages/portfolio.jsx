@@ -2,6 +2,7 @@ import Layout from '../components/Layouts/Default/DefaultNoNav';
 import Columns from '../components/Layouts/Columns/Columns';
 import Container from '../components/Layouts/Container/Container';
 import Section from '../components/Layouts/Section/Section';
+import Level from '../components/Layouts/Level/Level';
 import Hero from '../components/Hero/Hero';
 import PolyBackground from '../components/Backgrounds/PortfolioBg';
 import Scroller from '../components/Scroller/Scroller';
@@ -34,13 +35,18 @@ const PortfolioPage = () => {
     const aboutMe = (
         <>
             <div className="title">Who I am</div>
+            <nav>
+                <Level>
+                    <div className="title">My Projects</div>
+                    <div className="title">About Me</div>
+                    <div className="title">Get in Touch</div>                    
+                </Level>
+            </nav>
             <Columns classnames='is-multiline is-variable is-mobile' sizes={[4, 8]}>
                 <figure className="loading image is-1by1">
                     <LazyImg src='http://localhost/www/assets/imgs/maface.svg' title='my vectorised face'></LazyImg>
                 </figure>
-                {/* <figure className="loading image is-1by1">
-                    <LazyImg src={['http://localhost/www/assets/imgs/maface.svg 200w', 'http://localhost/www/assets/imgs/maface.svg 400w', 'http://localhost/www/assets/imgs/maface.svg 800w']} title='my vectorised face'></LazyImg>
-                </figure> */}
+
                 <div>
                     <div className="title">Curriculum</div>
                     <p className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aut omnis
