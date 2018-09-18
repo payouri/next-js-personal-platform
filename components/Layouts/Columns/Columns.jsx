@@ -5,7 +5,7 @@ import './Columns.css';
 const Columns = (props) => (
     
     
-    <div className={`columns${props.classnames? ' '+props.classnames:''}`}>
+    <div className={`columns${' ' + props.classnames}`}>
         {props.children.length > 1
             ? 
             props.children.map( (child, i) => 

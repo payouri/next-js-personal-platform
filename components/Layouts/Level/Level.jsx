@@ -12,7 +12,7 @@ const Level = props => {
     ))
 
     return (
-        <div className={`level${props.classnames?' '+props.classnames:''}`}>
+        <div className={`level${' ' + props.classnames}`}>
             {props.left
                 ?
                 <LevelLeft>

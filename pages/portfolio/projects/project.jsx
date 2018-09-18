@@ -1,6 +1,6 @@
-import Layout from '../../components/Layouts/Default/Default';
-import Container from '../../components/Layouts/Container/Container';
-import Section from '../../components/Layouts/Section/Section';
+import Layout from '../../../components/Layouts/Default/Default';
+import Container from '../../../components/Layouts/Container/Container';
+import Section from '../../../components/Layouts/Section/Section';
 
 const ProjectPage = () => {
 

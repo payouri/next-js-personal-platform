@@ -5,7 +5,7 @@ import './Navbar.css';
 
 const Navbar = (props) => (
 
-    <nav className={`navbar${props.classnames?' ' + props.classnames:''}`}>
+    <nav className={`navbar${' ' + props.classnames}`}>
         <div className="container">
             <div className="navbar-start">
                 <ul className="navbar-menu is-active">

@@ -1,7 +1,7 @@
 const Hero = props => {
 
     return (
-        <section style={props.style?props.style:''} className={`hero${props.classnames?' ' + props.classnames:''}`}>
+        <section style={props.style} className={`hero${' ' + props.classnames}`}>
             {props.head ?
                 <div className="hero-foot">
                     {props.head}
