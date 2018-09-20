@@ -1,8 +1,31 @@
-const Input = props => (
+import {Component} from 'react';
 
-    <input className={`input${' ' + props.classnames}`} style={props.style} 
-        type={props.type} name={props.name} id={props.id}
-        onInput={props.onInput} onChange={props.onChange} placeholder={props.placeholder}/>
+class Input extends Component { 
 
-)
+    constructor(props) {
+        super(props);
+
+        this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 
+            ? ' ' + this.props.classnames : '';
+    }
+
+    render() {
+        return (
+
+            <input 
+                className={`input${this.classnames}`}
+                id={this.props.id}
+                name={this.props.name}
+                onChange={this.props.onChange}
+                onInput={this.props.onInput}
+                placeholder={this.props.placeholder}
+                required={this.props.required}
+                style={this.props.style} 
+                type={this.props.type}
+            />
+
+        )
+    }
+}
+
 export default Input;

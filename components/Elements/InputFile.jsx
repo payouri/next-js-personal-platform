@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import { isString } from 'util';
 
 
 class FileInput extends Component{
@@ -10,6 +11,9 @@ class FileInput extends Component{
         this.state = {
             file: this.props.file || 'Aucun'
         }
+        
+        this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 
+            ? ' ' + this.props.classnames : '';
     }
     
     
@@ -20,10 +24,17 @@ class FileInput extends Component{
     }
 
     render() {
+        this.props.hasName ? this.classnames += ' has-name' : '';
+        this.props.isBoxed ? this.classnames += ' is-boxed' : '';
         return (
-            <div className={`file${' ' + this.props.classnames} ${this.props.hasName?'has-name':''}`}>
+            <div className={`file${this.classnames}`}>
                 <label className='file-label'>
-                    <input onChange={this.onFileChange} classnames='file-input' type='file' name={this.props.name} style={{display: 'none'}}/>
+                    <input 
+                        className='file-input'
+                        onChange={this.onFileChange} 
+                        name={this.props.name}
+                        type='file' 
+                    />
                     <span className='file-cta'>
                         <span className='file-icon'>
                             <i className='fas fa-upload'></i>

@@ -1,9 +1,21 @@
-const Button = props => (
+import {Component} from 'react';
 
-    <button onClick={props.onClick} className={`button${' '+props.classnames}`}>
-        {props.children}
-    </button>
+class Button extends Component {
 
-);
+    constructor(props) {
+        super(props);
+
+        this.classnames = this.props.classnames ? ' '+this.props.classnames : ''
+    }
+
+    render() {
+        
+        return (
+            <button onMouseOver={this.props.onMouseOver} onClick={this.props.onClick} className={`button${this.classnames}`}>
+                {this.props.children}
+            </button>
+        )
+    }
+}
 
 export default Button;

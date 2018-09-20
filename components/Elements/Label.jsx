@@ -1,9 +1,21 @@
-const Label = props => (
+import {Component} from 'react';
 
-    <label className={`label${' ' + props.classnames}`} htmlFor={props.for}>
-        {props.children}
-    </label>
+class Label extends Component {
+    constructor(props) {
+        super(props);
 
-)
+        
+        this.classnames = this.props.classnames ? ' ' + this.props.classnames : '';
+    }
+
+    render() {
+        return (
+            <label className={`label${this.classnames}`} htmlFor={this.props.for}>
+                {this.props.children}
+            </label>
+        )
+    }
+
+}
 
 export default Label;
