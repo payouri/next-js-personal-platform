@@ -5,6 +5,7 @@ import Label from '../Elements/Label';
 import Input from '../Elements/Input';
 import File from '../Elements/InputFile';
 
+import Textarea from '../Elements/Textarea';
 import Select from '../Elements/Select';
 import Form from '../Elements/Form';
 import Control from '../Elements/Control';
@@ -17,12 +18,35 @@ class ContactForm extends Component {
         super(props);
 
         this.state = {
-            fieldValues: {}
+            fieldValues: {
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            }
         }
+        this.subject = [
+            {value:'Chat'},
+            {value:'Chien', label: 'Dog', selected: true}
+        ];
         this.onInput = this.onInput.bind(this);
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
+    componentDidMount() {
+
+        const newState = this.state.fieldValues
+        
+        newState['subject'] = this.subject[0].value;
+
+        console.log(newState);
+
+
+        this.setState({
+            fieldValues: newState
+        })
+    }
+
 
     onInput(e) {
 
@@ -59,7 +83,7 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <Form onSubmit={this.onSubmit}>
+            <Form onSubmit={this.onSubmit} isHorizontal>
                 <>
                     <Label>My Input</Label>
                     <File classnames isBoxed hasName>
@@ -68,15 +92,38 @@ class ContactForm extends Component {
                 </>
                 <Control>
                     <Label>Nom:</Label>
-                    <Input onInput={this.onInput} name='name' type='text' placeholder='Enter your full name'/>
+                    <Input id='name'
+                        name='name'
+                        onInput={this.onInput}
+                        placeholder='Enter your full name'
+                        type='text' 
+                    />
                 </Control>
                 <Control>
-                    <Label>Email</Label>
-                    <Input onInput={this.onInput} name='email' type='email' placeholder='Enter your email'/>
+                    <Label>Email:</Label>
+                    <Input id='email'
+                        name='email'
+                        onInput={this.onInput}
+                        type='email'
+                        placeholder='Enter your email'
+                    />
                 </Control>
                 <Control>
-                    <Label>Objet</Label>
-                    <Select onChange={this.onChange} name='subject' options={[{value:'Chat'}, {value:'Chien', label: 'Dog', selected: true}]}/>
+                    <Label>Sujet:</Label>
+                    <Select id='subject'
+                        name='subject'
+                        onChange={this.onChange} 
+                        options={this.subject}
+                    />
+                </Control>
+                <Control>
+                    <Label>Votre Message:</Label>
+                    <Textarea id='message'
+                        name='message'
+                        onCHange={this.onCHange}
+                        onInput={this.onInput}
+                        value={this.state.fieldValues.message}
+                    ></Textarea>
                 </Control>
             </Form>
         )

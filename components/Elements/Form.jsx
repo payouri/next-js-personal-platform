@@ -10,9 +10,25 @@ class Form extends Component {
             fieldsValues: [this.props.fieldValues] || []
         }
         this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 
-            ? ' ' + this.props.classnames : '';
+            ? this.props.classnames : '';
     }
     fields() {
+        if(this.props.isHorizontal) {
+            if(this.props.children.length > 1) {
+                return this.props.children.map((child, i) => (
+                    <Field key={i} isHorizontal>
+                        {child}
+                    </Field>
+                )
+            )
+            }else {
+                return (
+                    <Field isHorizontal>
+                        {this.props.children}
+                    </Field>
+                )
+            }
+        }
         if(this.props.children.length > 1) {
             return this.props.children.map((child, i) => (
                 <Field key={i}>
@@ -31,7 +47,7 @@ class Form extends Component {
     render() {
         return (
             <form action={this.props.action}
-                className={`${this.classnames}`}
+                className={this.classnames}
                 encType={this.props.enctype || 'application/x-www-form-urlencoded'}
                 method={this.props.method || 'get'}
             >

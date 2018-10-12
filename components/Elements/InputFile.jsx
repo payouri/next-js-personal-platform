@@ -1,6 +1,5 @@
 import {Component} from 'react';
-import { isString } from 'util';
-
+import Input from './Input';
 
 class FileInput extends Component{
 
@@ -14,6 +13,8 @@ class FileInput extends Component{
         
         this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 
             ? ' ' + this.props.classnames : '';
+        this.props.hasName ? this.classnames += ' has-name' : '';
+        this.props.isBoxed ? this.classnames += ' is-boxed' : '';
     }
     
     
@@ -24,15 +25,13 @@ class FileInput extends Component{
     }
 
     render() {
-        this.props.hasName ? this.classnames += ' has-name' : '';
-        this.props.isBoxed ? this.classnames += ' is-boxed' : '';
         return (
             <div className={`file${this.classnames}`}>
                 <label className='file-label'>
-                    <input 
-                        className='file-input'
-                        onChange={this.onFileChange} 
+                    <input className='file-input'
+                        id={this.props.id}
                         name={this.props.name}
+                        onChange={this.onFileChange}
                         type='file' 
                     />
                     <span className='file-cta'>

@@ -4,8 +4,9 @@ class Label extends Component {
     constructor(props) {
         super(props);
 
-        
-        this.classnames = this.props.classnames ? ' ' + this.props.classnames : '';
+        this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 
+            ? ' ' + this.props.classnames : '';
+        this.props.isHorizontal ? this.classnames += ' is-horizontal' : '';
     }
 
     render() {

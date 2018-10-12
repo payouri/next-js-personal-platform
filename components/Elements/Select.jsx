@@ -20,14 +20,22 @@ class Select extends Component {
             </option>
 
         ));
-        this.classnames = this.props.classnames ? ' ' + this.props.classnames : '';
+        this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 
+            ? ' ' + this.props.classnames : '';
     }
 
     render() {
         return (
-            <select onChange={this.props.onChange} onInput={this.props.onInput} name={this.props.name} className={`select${this.classnames}`}>
-                {this.options}
-            </select>
+            <div className={`select${this.classnames}`}>
+                <select
+                    id={this.props.id}
+                    name={this.props.name}
+                    onChange={this.props.onChange}
+                    onInput={this.props.onInput}
+                    >
+                    {this.options}
+                </select>
+            </div>
         )
     }
 
