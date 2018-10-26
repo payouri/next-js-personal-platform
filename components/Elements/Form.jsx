@@ -4,6 +4,11 @@ import Field from './Field';
 
 class Form extends Component {
 
+    static defaultProps = {
+        isHorizontal = false,
+
+    }
+
     constructor(props) {
         super(props)
         this.state = {
@@ -50,10 +55,11 @@ class Form extends Component {
                 className={this.classnames}
                 encType={this.props.enctype || 'application/x-www-form-urlencoded'}
                 method={this.props.method || 'get'}
+                onSubmit={this.props.onSubmit}
             >
                 
                 {this.fields()}
-                <Button onClick={this.props.onSubmit} type='submit'>{this.props.cta || 'Envoyer'}</Button>
+                <Button type='submit'>{this.props.cta || 'Envoyer'}</Button>
 
             </form>
         )

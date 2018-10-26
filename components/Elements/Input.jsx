@@ -10,17 +10,18 @@ class Input extends Component {
     }
 
     render() {
+        const {} = this.props;
         return (
 
             <input 
                 className={`input${this.classnames}`}
-                id={this.props.id}
-                name={this.props.name}
-                onChange={this.props.onChange}
-                onInput={this.props.onInput}
-                placeholder={this.props.placeholder}
-                required={this.props.required}
-                style={this.props.style} 
+                id={id}
+                name={name}
+                onChange={onChange}
+                onInput={onInput}
+                placeholder={placeholder}
+                required={required}
+                style={style} 
                 type={this.props.type}
             />
 

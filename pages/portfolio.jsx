@@ -35,6 +35,19 @@ const PortfolioPage = () => {
     const aboutMe = (
         <>
             <div className="title">Who I am</div>
+            <Columns classnames='is-multiline is-variable is-mobile' sizes={[4, 8]}>
+                <figure className="loading image is-1by1">
+                    <LazyImg src='http://localhost/www/assets/imgs/maface.svg' title='my vectorised face'></LazyImg>
+                </figure>
+
+                <div className='content'>
+                    <div className='title'>Introducing Myself</div>
+                    <p className=''>I started learning web development by myself as a way to reduce my playtime on several games this was about two years ago. At first it was kind of hard to grasp anything but I kept myself at it, baby steps everydays. The more I satisfied my curiosity the more I was curious..</p>
+                    <p className=''>A few months later I had learn tons of new stuffs, including Responsive Web Design and Accessiblity, Javascript, PHP but still I felt that it was so overwelming and that I needed guidance.</p>
+                    <p className=''>So here I am, back in school learning things in a more academic way. Looking forwards to get my first gig in the industry.</p>
+                    <blockquote> Youri 25, junior web developer.</blockquote>
+                </div>
+            </Columns>
             <nav>
                 <Level>
                     <div className="title">My Projects</div>
@@ -42,32 +55,6 @@ const PortfolioPage = () => {
                     <div className="title">Get in Touch</div>                    
                 </Level>
             </nav>
-            <Columns classnames='is-multiline is-variable is-mobile' sizes={[4, 8]}>
-                <figure className="loading image is-1by1">
-                    <LazyImg src='http://localhost/www/assets/imgs/maface.svg' title='my vectorised face'></LazyImg>
-                </figure>
-
-                <div>
-                    <div className="title">Curriculum</div>
-                    <p className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aut omnis
-                        beatae! Suscipit rerum dolore
-                        quibusdam minima blanditiis, ratione culpa dignissimos adipisci laborum voluptatum aut eum
-                        ullam
-                        harum fugit laboriosam.</p>
-                    <div className="title">Curriculum</div>
-                    <p className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aut omnis
-                        beatae! Suscipit rerum dolore
-                        quibusdam minima blanditiis, ratione culpa dignissimos adipisci laborum voluptatum aut eum
-                        ullam
-                        harum fugit laboriosam.</p>
-                    <div className="title">Curriculum</div>
-                    <p className="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic aut omnis
-                        beatae! Suscipit rerum dolore
-                        quibusdam minima blanditiis, ratione culpa dignissimos adipisci laborum voluptatum aut eum
-                        ullam
-                        harum fugit laboriosam.</p>
-                </div>
-            </Columns>
         </>
     )
 
