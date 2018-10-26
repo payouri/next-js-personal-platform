@@ -5,7 +5,7 @@ import Field from './Field';
 class Form extends Component {
 
     static defaultProps = {
-        isHorizontal = false,
+        isHorizontal: false,
 
     }
 

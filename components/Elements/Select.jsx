@@ -1,7 +1,18 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
+export const Option = props => (
+    <option defaultValue={props.selected || false}
+        value={props.value || i}
+    >
+        {props.label ? props.label : props.value}
+    </option>
+)
+
 class Select extends Component {
+
+    static option = option;
 
     static defaultProps = {
         options: []
@@ -12,12 +23,7 @@ class Select extends Component {
 
         this.options = this.props.options.map((option, i) => (
 
-            <option defaultValue={option.selected || false}
-                key={i}
-                value={option.value || i}
-            >
-                {option.label ? option.label : option.value}
-            </option>
+            <Option key={i} {...option}/>
 
         ));
         this.classnames = this.props.classnames && typeof this.props.classnames === 'string' 

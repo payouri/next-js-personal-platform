@@ -1,20 +1,18 @@
 import {Component, cloneElement} from 'react';
 
-const FieldHint = props => (
+export const FieldHint = props => (
     <span className="field-hint">
         {props.children}
     </span>
 )
+ 
 
-export default FieldHint;
-
-const FieldLabel = props => (
+export const FieldLabel = props => (
     <span className="field-label">
         {props.children}
     </span>
 )
-
-export default FieldLabel;
+ 
 
 
 class Field extends Component {

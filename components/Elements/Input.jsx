@@ -22,7 +22,7 @@ class Input extends Component {
                 placeholder={placeholder}
                 required={required}
                 style={style} 
-                type={this.props.type}
+                type={type}
             />
 
         )

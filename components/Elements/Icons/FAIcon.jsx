@@ -1,4 +1,4 @@
 const FAIcon = props => (
-    <i className={props.classnames}></i>
+    <i className={`fa fa-${props.icon}`}></i>
 )
 export default FAIcon;

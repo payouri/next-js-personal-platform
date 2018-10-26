@@ -1,0 +1,28 @@
+.accordion {
+    position: relative;
+    /* transition: height 0.3s ease; */
+}
+.accordion .title {
+
+    margin-bottom: 0.5rem;
+
+}
+.accordion dd {
+    
+    transform: scaleY(0);
+    /* transition: transform 0.1s ease-out; */
+    transform-origin: top center;
+    height: 0;
+
+}
+.accordion .button {
+    position: absolute; 
+    top: 0.8rem; right: 1.25rem;
+    border: 0;
+    box-shadow: unset;
+}
+
+.accordion.open dd {
+    height: auto;
+    transform: scaleY(1);
+}
