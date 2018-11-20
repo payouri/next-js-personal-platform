@@ -1,0 +1,14 @@
+.aspect-ratio-outer {
+    position: relative;
+    height: 0;
+}
+.aspect-ratio-inner {
+    position: absolute;
+    top: 0;left: 0;bottom: 0;right: 0;
+}
+.aspect-ratio-outer.is-4by3 {
+    padding-bottom: 75%;
+}
+.aspect-ratio-outer.is-16by9 {
+    padding-bottom: 56.25%;
+}

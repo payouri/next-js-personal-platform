@@ -2,25 +2,27 @@ import PropTypes from 'prop-types';
 
 import './Columns.css';
 
-const Columns = (props) => (
+const Columns = (props) => {
     
+    const {classnames, multiline, centered, mobile, variable, children = [], sizes, gap} = props;
     
-    <div className={`columns${' ' + props.classnames}`}>
-        {props.children.length > 1
-            ? 
-            props.children.map( (child, i) => 
-                <div key={i} className={`column${props.sizes[i]?' is-'+props.sizes[i]:''}`}>
-                    { child }
+    return (
+        <div className={`columns${classnames?' ' + classnames:''}${multiline?' is-multiline':''}${centered?' is-centered':''}${mobile?' is-mobile':''}${variable?' is-variable':''}`}>
+            {children.length > 1
+                ? 
+                children.map( (child, i) => 
+                    <div key={i} className={`column${sizes[i%sizes.length]?' is-'+sizes[i%sizes.length]:''}`}>
+                        { child }
+                    </div>
+                )
+                :
+                <div className={`column${sizes && sizes[0]?' is-'+sizes[0]:''}`}>
+                    { children }
                 </div>
-            )
-            :
-            <div className={`column${props.sizes && props.sizes[0]?' is-'+props.sizes[0]:''}`}>
-                { props.children }
-            </div>
-        }
-    </div>
-
-);
+            }
+        </div>
+    )
+};
 
 Columns.propTypes = {
     

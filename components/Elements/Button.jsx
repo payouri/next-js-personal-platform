@@ -9,10 +9,10 @@ class Button extends Component {
     }
 
     render() {
-        
+       
         return (
             <button onMouseOver={this.props.onMouseOver} onClick={this.props.onClick} className={`button${this.classnames}`}>
-                {this.props.children}
+                {this.props.title || this.props.children}
             </button>
         )
     }

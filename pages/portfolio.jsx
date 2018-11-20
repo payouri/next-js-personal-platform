@@ -2,12 +2,11 @@ import Layout from '../components/Layouts/Default/DefaultNoNav';
 import Columns from '../components/Layouts/Columns/Columns';
 import Container from '../components/Layouts/Container/Container';
 import Section from '../components/Layouts/Section/Section';
-import Level from '../components/Layouts/Level/Level';
 import Hero from '../components/Hero/Hero';
 import PolyBackground from '../components/Backgrounds/PortfolioBg';
 import Scroller from '../components/Scroller/Scroller';
-
-import Title from '../components/Content/Title/Title';
+import BoxedTitle from '../components/Box/BoxedTitle';
+import Link from 'next/link';
 
 import LazyImg from '../components/LazyLoad/LazyImg';
 
@@ -49,11 +48,35 @@ const PortfolioPage = () => {
                 </div>
             </Columns>
             <nav>
-                <Level>
-                    <div className="title">My Projects</div>
-                    <div className="title">About Me</div>
-                    <div className="title">Get in Touch</div>                    
-                </Level>
+                <Columns sizes={[4, 4, 4]}>
+                    <Link href='portfolio/projects'>
+                        <a>
+                            <BoxedTitle
+                                background={{url: 'http://localhost/www/assets/imgs/duotone1.jpg',}}
+                                title={{title: 'My Projects', size: 2, align: 'right', position: 'bottom'}}
+                                ratio='4by3'
+                            ></BoxedTitle>
+                        </a>
+                    </Link>
+                    <Link href='portfolio/aboutme'>
+                        <a>
+                            <BoxedTitle
+                                background={{url: 'http://localhost/www/assets/imgs/duotone1.jpg',}}
+                                title={{title: 'About Me', size: 2, align: 'right', position: 'bottom'}}
+                                ratio='4by3'
+                            ></BoxedTitle>
+                        </a>
+                    </Link>
+                    <Link href='portfolio/contact'>
+                        <a>
+                            <BoxedTitle
+                                background={{url: 'http://localhost/www/assets/imgs/duotone1.jpg',}}
+                                title={{title: 'Get in Touch', size: 2, align: 'right', position: 'bottom'}}
+                                ratio='4by3'
+                            ></BoxedTitle>
+                        </a>
+                    </Link>
+                </Columns>
             </nav>
         </>
     )

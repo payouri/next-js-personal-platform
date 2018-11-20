@@ -12,7 +12,7 @@ export const Option = props => (
 
 class Select extends Component {
 
-    static option = option;
+    static Option = Option;
 
     static defaultProps = {
         options: []

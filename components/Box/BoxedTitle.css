@@ -1,0 +1,17 @@
+
+.with-background .title {
+    position: absolute;
+    padding: 2rem;
+    left: 0;right: 0;
+    
+}
+.with-background.has-title-top .title {
+    top: 0;
+}
+.with-background.has-title-bottom .title {
+    bottom: 0;
+}
+.with-background.has-title-center .title {
+    top: 50%;
+    transform: translateY(-50%);
+}
