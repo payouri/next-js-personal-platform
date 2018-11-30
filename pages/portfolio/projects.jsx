@@ -17,7 +17,6 @@ class ProjectsPage extends Component {
         return {countries: projects.countries};
     }
     render() {
-        console.log(this.props)
         return (
             <>
                 <Layout>

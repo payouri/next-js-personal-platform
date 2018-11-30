@@ -6,47 +6,68 @@ import { withRouter } from 'next/router';
 import Layout from '../../../components/Layouts/Default/Default';
 import Container from '../../../components/Layouts/Container/Container';
 import Section from '../../../components/Layouts/Section/Section';
+import Loader from '../../../components/Loader/Loader'
+import Card from '../../../components/Card/Card';
+import Title from '../../../components/Content/Title/Title';
 
 
 class ProjectPage extends Component {
 
 
-    static getInitialProps({req}) {
+    async getInitialProps({req}) {
 
-        const query = req.url.indexOf('?') != -1 ? req.url.substring(req.url.indexOf('?')) : undefined;
+        return {
+            query: req?req.url:'',
 
-        // const project = await fetch('http://localhost:3002/pays/'+this.props.router.query.id).then(res => res.json());
-        return {test: query};
+        }
 
     }
 
-    componentDidMount() {
-        // console.log(this.props.router);
+    async componentDidMount() {
+        const project = await fetch('http://localhost:3002/pays/' + this.props.router.query.id).then(res => res.json());
+        if(project && project.message != 'Not Found')
+            this.setState({project: project[0]});
+        else
+            this.setState({error: 404})
     }
 
     constructor(props) {
         super(props);
-        // console.log(props);
+        this.state = {
+            project: {},
+            error: null,
+        }
     }
     
     render() {
         const {query} = this.props.router;
-        if(query.id)
+        if(query.id && this.state.error == null) {
             return (
                 <Layout>
                     <Section>
                         <Container>
-                            {
-                                //ProjectPage
+                            {Object.keys(this.state.project).length > 0
+                                ?
+                                <Card header={this.state.project.nom ? this.state.project.nom : ''}>
+                                    <ul>
+                                        {Object.keys(this.state.project).map((prop, i) =>(
+                                            prop!='nom'&&prop!='_id'&&prop!='__v'?<li key={i}>{prop}: {this.state.project[prop]}</li>:''
+                                            ))}
+                                    </ul>
+                                </Card>
+                                :
+                                <Loader/>
                             }
                         </Container>
                     </Section>
                 </Layout>
             )
-        else {
-            return <Error></Error>
         }
-        
+        else {
+            return(
+                <Error statusCode={this.state.error}/>
+            )
+        }
     }
 
 }
