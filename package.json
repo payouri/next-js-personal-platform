@@ -15,9 +15,9 @@
   "dependencies": {
     "@researchgate/react-intersection-observer": "^0.7.4",
     "@zeit/next-css": "^1.0.1",
-    "draft-js": "^0.10.5",
+    "draft-js": "^0.11.7",
     "html-escape": "^2.0.0",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "next": "^7.0.2",
     "next-routes": "^1.4.2",
     "react": "^16.6.3",
